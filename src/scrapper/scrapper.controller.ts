@@ -3,14 +3,10 @@ import { ScrapperService } from 'src/scrapper/scrapper.service';
 
 @Controller('scrapper')
 export class ScrapperController {
+  constructor(private scrapperService: ScrapperService) {}
 
-    constructor(
-        private scrapperService: ScrapperService
-    ) {
-    }
-
-    @Get()
-    scrapperController() {
-        return this.scrapperService.getDataViaPuppeteer();
-    }
+  @Get()
+  scrapperController() {
+    return this.scrapperService.getDataViaPuppeteer();
+  }
 }
